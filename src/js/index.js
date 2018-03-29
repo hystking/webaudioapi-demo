@@ -24,6 +24,15 @@ lowpass.connect(highpass);
 highpass.connect(master);
 master.connect(context.destination);
 
+// スマホで任意のタイミングで砕石できるようになる魔法
+function onFirstPointerDown() {
+  document.body.removeEventListener("touchstart", onFirstPointerDown)
+  document.body.removeEventListener("mousedown", onFirstPointerDown)
+  context.createBufferSource().start(0)
+}
+document.body.addEventListener("touchstart", onFirstPointerDown)
+document.body.addEventListener("mousedown", onFirstPointerDown)
+
 class Slides {
   constructor(doms) {
     this.index = -1;
