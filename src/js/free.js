@@ -157,12 +157,12 @@ export default function index() {
 
   function getPianoBackingRandom() {
     return (
-      Math.floor(Math.random() * (lack.pianoBacking.tracks.length - 1)) + 1
+      Math.floor(Math.random() * (lack.pianoBacking.tracks.length))
     );
   }
 
   function getDrumsRandom() {
-    return Math.floor(Math.random() * (lack.drums.tracks.length - 1)) + 1;
+    return Math.floor(Math.random() * (lack.drums.tracks.length));
   }
 
   function getKickRandom() {
@@ -170,126 +170,14 @@ export default function index() {
   }
 
   signalGenerator.addCallback(1 / 2, -0.02, function(k, nextTime) {
-    switch (state.mode) {
-      case 'silent':
-        lackIndicies.kick = 0;
-        lackIndicies.drums = 0;
-        lackIndicies.pianoBacking = 0;
-        lackIndicies.pianoMelody = 0;
-        lackIndicies.bass = 0;
-        lackIndicies.pad = 0;
-        lackIndicies.pluck = 0;
-        lackIndicies.effects = 0;
-        break;
-      case 'drums-only':
-        lackIndicies.kick = 1;
-        lackIndicies.drums = 1;
-        lackIndicies.pianoBacking = 0;
-        lackIndicies.pianoMelody = 0;
-        lackIndicies.bass = 0;
-        lackIndicies.pad = 0;
-        lackIndicies.pluck = 0;
-        lackIndicies.effects = 1;
-        break;
-      case 'kasane1':
-        lackIndicies.kick = 1;
-        lackIndicies.drums = 1;
-        lackIndicies.pianoBacking = 1;
-        lackIndicies.pianoMelody = 0;
-        lackIndicies.bass = 0;
-        lackIndicies.pad = 0;
-        lackIndicies.pluck = 0;
-        lackIndicies.effects = 1;
-        break;
-      case 'kasane2':
-        lackIndicies.kick = 1;
-        lackIndicies.drums = 1;
-        lackIndicies.pianoBacking = 1;
-        lackIndicies.pianoMelody = 0;
-        lackIndicies.bass = 1;
-        lackIndicies.pad = 1;
-        lackIndicies.pluck = 1;
-        lackIndicies.effects = 1;
-        break;
-      case 'free':
-        lackIndicies.kick = getKickRandom();
-        lackIndicies.drums = getDrumsRandom();
-        lackIndicies.pianoBacking = getPianoBackingRandom();
-        lackIndicies.pianoMelody = getPianoMelodyRandom();
-        lackIndicies.bass = 1;
-        lackIndicies.pad = 1;
-        lackIndicies.pluck = 1;
-        lackIndicies.effects = 1;
-        break;
-      case 'outro':
-        lackIndicies.kick = 2
-        lackIndicies.drums = 3
-        lackIndicies.pianoBacking = 1;
-        lackIndicies.pianoMelody = getPianoMelodyRandom();
-        lackIndicies.bass = 0;
-        lackIndicies.pad = 0;
-        lackIndicies.pluck = 0;
-        lackIndicies.effects = 1;
-        break;
-      case 'shelter':
-        lackIndicies.kick = 2
-        lackIndicies.drums = 3
-        lackIndicies.pianoBacking = 1;
-        lackIndicies.pianoMelody = 6;
-        lackIndicies.bass = 0;
-        lackIndicies.pad = 0;
-        lackIndicies.pluck = 0;
-        lackIndicies.effects = 1;
-        break;
-    }
-  });
-
-  const doms = _.map(document.getElementsByClassName('js-slide'), e => e);
-  const slides = new Slides(doms);
-  slides.next();
-  slides.onSlideChange = (index, key) => {
-    switch (key) {
-      case 'silent':
-      case 'drums-only':
-      case 'kasane1':
-      case 'kasane2':
-      case 'free':
-      case 'outro':
-      case 'shelter':
-        state.mode = key;
-        break;
-      case 'fade':
-        break;
-      case 'highpass':
-        highpass.frequency.setTargetAtTime(500, 0, 0);
-        lowpass.frequency.setTargetAtTime(highpass.frequency.maxValue, 0, 0);
-        reverb.wet.setTargetAtTime(0.3, 0, 0);
-        reverb.dry.setTargetAtTime(0.8, 0, 0);
-        break;
-      case 'lowpass':
-        highpass.frequency.setTargetAtTime(0, 0, 0);
-        lowpass.frequency.setTargetAtTime(500, 0, 0);
-        reverb.wet.setTargetAtTime(0.3, 0, 0);
-        reverb.dry.setTargetAtTime(0.8, 0, 0);
-        break;
-      case 'reverb':
-        highpass.frequency.setTargetAtTime(0, 0, 0);
-        lowpass.frequency.setTargetAtTime(highpass.frequency.maxValue, 0, 0);
-        reverb.wet.setTargetAtTime(1, 0, 0);
-        reverb.dry.setTargetAtTime(0, 0, 0);
-        break;
-      case 'reset-effects':
-        highpass.frequency.setTargetAtTime(0, 0, 0);
-        lowpass.frequency.setTargetAtTime(highpass.frequency.maxValue, 0, 0);
-        reverb.wet.setTargetAtTime(0.3, 0, 0);
-        reverb.dry.setTargetAtTime(0.8, 0, 0);
-        break;
-    }
-    console.log(index, key);
-  };
-
-  window.addEventListener('click', () => {
-    slides.next();
+    lackIndicies.kick = getKickRandom();
+    lackIndicies.drums = getDrumsRandom();
+    lackIndicies.pianoBacking = getPianoBackingRandom();
+    lackIndicies.pianoMelody = getPianoMelodyRandom();
+    lackIndicies.bass = 1;
+    lackIndicies.pad = 1;
+    lackIndicies.pluck = 1;
+    lackIndicies.effects = 1;
   });
 
   Promise.all(

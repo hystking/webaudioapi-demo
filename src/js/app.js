@@ -1,9 +1,11 @@
 import index from "./index"
+import free from "./free"
 
 function routes(path) {
-  switch(path) {
-    case "/":
-    case "/index.html":
+  switch(true) {
+    case /free\.html/.test(path):
+      return free()
+      break;
     default:
       return index()
   }
