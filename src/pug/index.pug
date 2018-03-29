@@ -1,0 +1,102 @@
+extend base
+
+block append meta
+  //- Meta Infomations
+  title No Title
+  meta(name="description" content="")
+  meta(name="keywords" content="")
+
+  //- Facebook OGP
+  meta(name="og:title" content="")
+  meta(name="og:description" content="")
+  meta(name="og:type" content="website")
+  meta(name="og:url" content="")
+  meta(name="og:image" content="")
+  meta(name="og:site_name" content="")
+
+  //- Twitter Card
+  meta(name="twitter:card" content="summary_large_image")
+  meta(name="twitter:title" content="")
+  meta(name="twitter:description" content="")
+  meta(name="twitter:image:src" content="")
+
+block content
+  .slides.js-slides
+    .slide.js-slide
+      .big つくっていいとも
+      .middle ごん
+    .slide.js-slide
+      .big こんにちは
+    .slide.js-slide
+      .big ファイ部からオルタナになったごんです
+    .slide.js-slide
+      .big ……
+    .slide.js-slide
+      .big 今日は
+    .slide.js-slide
+      .big 何もつくってきていないので
+    .slide.js-slide(data-slide-key="drums-only")
+      .big WebAudioAPIの紹介をするぜ！！
+    .slide.js-slide
+      .big WebAudioAPIとは
+    .slide.js-slide
+      .middle WebAudioAPI とは、ブラウザ上で音を鳴らす仕組みです
+    .slide.js-slide
+      .big スマホ上で音を鳴らすことのイメージ
+    .slide.js-slide
+      .middle ・タップするまでならない
+      .middle ・重い
+      .middle ・Basic認証何度も聞かれる
+      .middle ・ブラウザ閉じても鳴り続けてうるさい
+    .slide.js-slide
+      .big たしかに！
+    .slide.js-slide
+      .big しかしWebAudioAPIは実は
+    .slide.js-slide
+      .big かなり高機能なAPIなので
+    .slide.js-slide
+      .big いろいろできる
+    .slide.js-slide
+      .big 紹介するぜ！
+    .slide.js-slide(data-slide-key="kasane1")
+      .big 複数のトラックを重ねて鳴らしたり（ずれない）
+    .slide.js-slide(data-slide-key="kasane2")
+      .big もっと重ねて鳴らしたり
+    .slide.js-slide(data-slide-key="free")
+      .big ランダムにフレーズをかさねたり
+    .slide.js-slide
+      .big このプレゼンは
+    .slide.js-slide
+      .big タイミングを取るのがすごく難しいです
+    .slide.js-slide(data-slide-key="highpass")
+      .big ハイパスかけたり
+    .slide.js-slide(data-slide-key="lowpass")
+      .big ローパスかけたり
+    .slide.js-slide(data-slide-key="reverb")
+      .big リバーブかけたり
+    .slide.js-slide(data-slide-key="reset-effects")
+      .big 色々出来るぞ
+      .middle ・フェード
+      .middle ・パン
+      .middle ・ビットクラッシュ
+      .middle ・わう
+      .middle ・サイドチェイン
+    .slide.js-slide
+      .big 実は色々出来るので
+    .slide.js-slide
+      .big 企画とかの参考にしてみていただければと思います
+    .slide.js-slide(data-slide-key="outro")
+      .big （エモいアウトロ）
+    .slide.js-slide
+      .big 僕はファイ部じゃないので
+    .slide.js-slide
+      .big 仕事になったら
+    .slide.js-slide
+      .big ファイ部の人がやってくれます
+    .slide.js-slide(data-slide-key="shelter")
+      img.image(src="img/shelter-girl.png" alt="")
+      .big おわり
+    .slide.js-slide(data-slide-key="silent")
+      img.image(src="img/shelter-girl.png" alt="")
+      .big おわり
+  #beatBar.beat-bar
