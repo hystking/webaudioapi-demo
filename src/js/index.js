@@ -143,91 +143,91 @@ export default function index() {
     bass: [
       {},
       {
-        path: '/audio/stems/bass/1.mp3',
+        path: 'audio/stems/bass/1.mp3',
       },
     ],
     effects: [
       {},
       {
-        path: '/audio/stems/effects/1.mp3',
+        path: 'audio/stems/effects/1.mp3',
       },
     ],
     pad: [
       {},
       {
-        path: '/audio/stems/pad/1.mp3',
+        path: 'audio/stems/pad/1.mp3',
       },
     ],
     pianoMelody: [
       {},
       {
-        path: '/audio/stems/piano_melody/1.mp3',
+        path: 'audio/stems/piano_melody/1.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/2.mp3',
+        path: 'audio/stems/piano_melody/2.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/3.mp3',
+        path: 'audio/stems/piano_melody/3.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/4.mp3',
+        path: 'audio/stems/piano_melody/4.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/5.mp3',
+        path: 'audio/stems/piano_melody/5.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/6.mp3',
+        path: 'audio/stems/piano_melody/6.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/7.mp3',
+        path: 'audio/stems/piano_melody/7.mp3',
       },
       {
-        path: '/audio/stems/piano_melody/8.mp3',
+        path: 'audio/stems/piano_melody/8.mp3',
       },
     ],
     drums: [
       {},
       {
-        path: '/audio/stems/drums/1.mp3',
+        path: 'audio/stems/drums/1.mp3',
       },
       {
-        path: '/audio/stems/drums/2.mp3',
+        path: 'audio/stems/drums/2.mp3',
       },
       {
-        path: '/audio/stems/drums/3.mp3',
+        path: 'audio/stems/drums/3.mp3',
       },
     ],
     kick: [
       {},
       {
-        path: '/audio/stems/kick/1.mp3',
+        path: 'audio/stems/kick/1.mp3',
       },
       {
-        path: '/audio/stems/kick/2.mp3',
+        path: 'audio/stems/kick/2.mp3',
       },
       {
-        path: '/audio/stems/kick/3.mp3',
+        path: 'audio/stems/kick/3.mp3',
       },
     ],
     pianoBacking: [
       {},
       {
-        path: '/audio/stems/piano_backing/1.mp3',
+        path: 'audio/stems/piano_backing/1.mp3',
       },
       {
-        path: '/audio/stems/piano_backing/2.mp3',
+        path: 'audio/stems/piano_backing/2.mp3',
       },
       {
-        path: '/audio/stems/piano_backing/3.mp3',
+        path: 'audio/stems/piano_backing/3.mp3',
       },
       {
-        path: '/audio/stems/piano_backing/4.mp3',
+        path: 'audio/stems/piano_backing/4.mp3',
       },
     ],
     pluck: [
       {},
       {
-        path: '/audio/stems/pluck/1.mp3',
+        path: 'audio/stems/pluck/1.mp3',
       },
     ],
   };
