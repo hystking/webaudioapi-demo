@@ -7,7 +7,7 @@ export class SignalGenerator {
     this.callbacks = [];
     this.tick = time => {
       this.update(time);
-      requestAnimationFrame(this.tick);
+      setTimeout(this.tick, 0);
     };
   }
 
@@ -27,7 +27,7 @@ export class SignalGenerator {
   }
 
   timeAt(beat, index) {
-    return 16 / this.bpm * 60 * index / beat;
+    return 16 / this.bpm * 60 * index / beat + this.startTime;
   }
 
   addCallback(beat, offset, func) {
@@ -42,7 +42,7 @@ export class SignalGenerator {
 
   start(startTime) {
     this.startTime = startTime;
-    requestAnimationFrame(this.tick);
+    setTimeout(this.tick, 0);
   }
 
   beatFrac(beat) {

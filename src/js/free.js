@@ -38,7 +38,7 @@ export default function index() {
   const bpm = 120;
 
   const signalGenerator = new SignalGenerator(context, 120);
-  signalGenerator.start(context.currentTime);
+  signalGenerator.start(context.currentTime - 14);
 
   const lackDatas = {
     bass: [
@@ -192,14 +192,20 @@ export default function index() {
       const beat = key === 'effects' ? 1 / 2 : 1;
       signalGenerator.addCallback(beat, -0.01, function(k, nextTime) {
         const index = lackIndicies[key];
-        tracks.tracks[index].start(nextTime);
+        if(nextTime > 0) {
+          tracks.tracks[index].start(nextTime);
+        }
       });
     });
   });
 
   const barDom = document.getElementById("beatBar");
+  const stateLogDom = document.getElementById("stateLog");
   function barTick(time) {
     barDom.style.transform = `scale(${signalGenerator.beatFrac(1 / 2)}, 1)`;
+    stateLogDom.innerHTML = Object.keys(lackIndicies).map(key => {
+      return `${key}: ${lackIndicies[key]}<br/>`;
+    }).join("");
     requestAnimationFrame(barTick);
   }
   requestAnimationFrame(barTick);
